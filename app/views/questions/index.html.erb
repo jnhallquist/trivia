@@ -22,7 +22,9 @@
       <td><%= question.choice_d %></td>
       <td><%= question.correct_answer.upcase %></td>
       <td>
-        <%= link_to question_path(question) do %><%= fa_icon "eye" %><% end %>
+        <%= link_to edit_question_path(question) do %>
+          <%= fa_icon "edit" %>
+        <% end %>
       </td>
       <td>
         <%= link_to question_path(question),
