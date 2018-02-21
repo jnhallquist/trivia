@@ -1,33 +1,35 @@
-<h1>Listing Questions</h1>
-
-<%= link_to 'New question', new_question_path %>
-
 <table class="table table-sm table-striped">
   <tr>
-    <th scope="col">Question</th>
-    <th scope="col">Choice A</th>
-    <th scope="col">Choice B</th>
-    <th scope="col">Choice C</th>
-    <th scope="col">Choice D</th>
-    <th scope="col">Correct Answer</th>
-    <th scope="col">Show</th>
-    <th scope="col">Edit</th>
-    <th scope="col">Destroy</th>
+    <th>
+      <%= link_to new_question_path do %><%= fa_icon "plus" %><% end %>
+    </th>
+    <th>Question</th>
+    <th>A</th>
+    <th>B</th>
+    <th>C</th>
+    <th>D</th>
+    <th>Correct Answer</th>
+    <th></th>
+    <th></th>
   </tr>
-
   <% @questions.each do |question| %>
     <tr>
-      <td scope="row"><%= question.question %></td>
+      <td></td>
+      <td><%= question.question %></td>
       <td><%= question.choice_a %></td>
       <td><%= question.choice_b %></td>
       <td><%= question.choice_c %></td>
       <td><%= question.choice_d %></td>
       <td><%= question.correct_answer.upcase %></td>
-      <td><%= link_to 'Show', question_path(question) %></td>
-      <td><%= link_to 'Edit', edit_question_path(question) %></td>
-      <td><%= link_to 'Destroy', question_path(question),
+      <td>
+        <%= link_to question_path(question) do %><%= fa_icon "eye" %><% end %>
+      </td>
+      <td>
+        <%= link_to question_path(question),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
+              data: { confirm: 'Are you sure?' } do %>
+        <%= fa_icon "trash" %><% end %>
+      </td>
     </tr>
   <% end %>
 </table>

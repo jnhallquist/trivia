@@ -52,3 +52,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Bootstrap and Bootstrap dependencies
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
+
+# Use Font-Awesome-Rails
+gem 'font-awesome-rails'
