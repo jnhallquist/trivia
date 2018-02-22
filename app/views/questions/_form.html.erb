@@ -1,45 +1,21 @@
-<%= form_with model: @question, local: true  do |form| %>
-
-  <% if @question.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@question.errors.count, "error") %> prohibited
-        this question from being saved:
-      </h2>
-      <ul>
-        <% @question.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
+<%= bootstrap_form_with(model: @question, local: true, layout: :horizontal, control_col: "col-sm-8") do |form| %>
+  <%= form.form_group :question, label: { text: "Question" } do %>
+    <%= form.text_area :question, hide_label: true %>
   <% end %>
 
-  <p>
-    <%= form.label :question %><br>
-    <%= form.text_area :question %>
-  </p>
-
-  <p>
+  <%= form.form_group :answer_choices, label: { text: "Answer Choices" } do %>
     <%= form.radio_button :correct_answer, 'a' %>
-    <%= form.text_field :choice_a %>
-  </p>
+    <%= form.text_field :choice_a, hide_label: true %>
 
-  <p>
     <%= form.radio_button :correct_answer, 'b' %>
-    <%= form.text_field :choice_b %>
-  </p>
+    <%= form.text_field :choice_b, hide_label: true %>
 
-  <p>
     <%= form.radio_button :correct_answer, 'c' %>
-    <%= form.text_field :choice_c %>
-  </p>
+    <%= form.text_field :choice_c, hide_label: true %>
 
-  <p>
     <%= form.radio_button :correct_answer, 'd' %>
-    <%= form.text_field :choice_d %>
-  </p>
+    <%= form.text_field :choice_d, hide_label: true %>
 
-  <p>
-    <%= form.submit %>
-  </p>
+    <%= form.submit class: "btn btn-primary"  %>
+  <% end %>
 <% end %>

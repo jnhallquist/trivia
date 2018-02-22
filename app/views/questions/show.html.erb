@@ -1,32 +1,22 @@
-<p>
-  <strong>Question:</strong>
-  <%= @question.question %>
-</p>
-
-<p>
-  <strong>A:</strong>
-  <%= @question.choice_a %>
-</p>
-
-<p>
-  <strong>B:</strong>
-  <%= @question.choice_b %>
-</p>
-
-<p>
-  <strong>C:</strong>
-  <%= @question.choice_c %>
-</p>
-
-<p>
-  <strong>D:</strong>
-  <%= @question.choice_d %>
-</p>
-
-<p>
-  <strong>Answer:</strong>
-  <%= @question.correct_answer %>
-</p>
-
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Back', questions_path %>
+<div class="card w-50">
+  <div class="card-header text-right">
+    <%= link_to edit_question_path(@question) do %>
+      <%= fa_icon "edit" %>
+    <% end %> |
+    <%= link_to questions_path do %>
+      <%= fa_icon "arrow-left" %>
+    <% end %>
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p><%= @question.question %></p>
+    </blockquote>
+    <p class="card-text"><strong>A: </strong><%= @question.choice_a %></p>
+    <p class="card-text"><strong>B: </strong><%= @question.choice_b %></p>
+    <p class="card-text"><strong>C: </strong><%= @question.choice_c %></p>
+    <p class="card-text"><strong>D: </strong><%= @question.choice_d %></p>
+    <p class="card-text text-right"><strong>Correct Answer: </strong>
+      <%= @question.correct_answer.upcase %>
+    </p>
+  </div>
+</div>

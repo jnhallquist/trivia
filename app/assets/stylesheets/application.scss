@@ -1,2 +1,36 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+@import "font-awesome";
+@import "rails_bootstrap_forms";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.main-container {
+  height: 100vh;
+}
+
+.main-row {
+  height: 100%;
+}
+
+.content-container {
+  overflow: auto;
+  background-color: #f1f1f1;
+  padding-top: 1rem;
+}
+
+.footer-nav {
+  background-color: #e3f2fd;
+}
+
+.navbar-text {
+  margin: 0 auto;
+}
