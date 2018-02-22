@@ -2,3 +2,16 @@
 @import "bootstrap";
 @import "font-awesome";
 @import "rails_bootstrap_forms";
+
+.main-container {
+  height: 100vh;
+}
+
+.main-row {
+  height: 100%;
+}
+
+.content-container {
+  background-color: #f1f1f1;
+  padding-top: 1rem;
+}
