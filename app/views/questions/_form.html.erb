@@ -1,19 +1,4 @@
 <%= bootstrap_form_with(model: @question, local: true, layout: :horizontal, control_col: "col-sm-8") do |form| %>
-
-  <% if @question.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@question.errors.count, "error") %> prohibited
-        this question from being saved:
-      </h2>
-      <ul>
-        <% @question.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <%= form.form_group :question, label: { text: "Question" } do %>
     <%= form.text_area :question, hide_label: true %>
   <% end %>
@@ -30,7 +15,7 @@
 
     <%= form.radio_button :correct_answer, 'd' %>
     <%= form.text_field :choice_d, hide_label: true %>
-  <% end %>
 
-  <%= form.submit %>
+    <%= form.submit %>
+  <% end %>
 <% end %>
