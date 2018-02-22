@@ -11,6 +11,7 @@
     <th>Correct Answer</th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
   <% @questions.each do |question| %>
     <tr>
@@ -21,6 +22,11 @@
       <td><%= question.choice_c %></td>
       <td><%= question.choice_d %></td>
       <td><%= question.correct_answer.upcase %></td>
+      <td>
+        <%= link_to question_path(question) do %>
+          <%= fa_icon "eye" %>
+        <% end %>
+      </td>
       <td>
         <%= link_to edit_question_path(question) do %>
           <%= fa_icon "edit" %>
