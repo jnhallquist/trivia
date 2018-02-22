@@ -52,3 +52,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Bootstrap and Bootstrap dependencies
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
+
+# Use Bootstrap Form
+gem 'bootstrap_form',
+    git: 'https://github.com/bootstrap-ruby/bootstrap_form.git',
+    branch: 'master'
+
+# Use Font-Awesome-Rails
+gem 'font-awesome-rails'
