@@ -1,4 +1,4 @@
-<%= form_with model: @question, local: true  do |form| %>
+<%= bootstrap_form_with(model: @question, local: true, layout: :horizontal, control_col: "col-sm-8") do |form| %>
 
   <% if @question.errors.any? %>
     <div id="error_explanation">
@@ -14,32 +14,23 @@
     </div>
   <% end %>
 
-  <p>
-    <%= form.label :question %><br>
-    <%= form.text_area :question %>
-  </p>
+  <%= form.form_group :question, label: { text: "Question" } do %>
+    <%= form.text_area :question, hide_label: true %>
+  <% end %>
 
-  <p>
+  <%= form.form_group :answer_choices, label: { text: "Answer Choices" } do %>
     <%= form.radio_button :correct_answer, 'a' %>
-    <%= form.text_field :choice_a %>
-  </p>
+    <%= form.text_field :choice_a, hide_label: true %>
 
-  <p>
     <%= form.radio_button :correct_answer, 'b' %>
-    <%= form.text_field :choice_b %>
-  </p>
+    <%= form.text_field :choice_b, hide_label: true %>
 
-  <p>
     <%= form.radio_button :correct_answer, 'c' %>
-    <%= form.text_field :choice_c %>
-  </p>
+    <%= form.text_field :choice_c, hide_label: true %>
 
-  <p>
     <%= form.radio_button :correct_answer, 'd' %>
-    <%= form.text_field :choice_d %>
-  </p>
+    <%= form.text_field :choice_d, hide_label: true %>
+  <% end %>
 
-  <p>
-    <%= form.submit %>
-  </p>
+  <%= form.submit %>
 <% end %>
