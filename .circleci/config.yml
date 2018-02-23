@@ -71,7 +71,7 @@ jobs:
 
       - run:
           name: Run tests
-          command: test
+          command: bin/rails test
 
       # Save test results for timing analysis
       - store_test_results:
