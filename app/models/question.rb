@@ -13,4 +13,7 @@ class Question < ApplicationRecord
 
   validates :choice_d,
     presence: true
+
+  validates :correct_answer,
+    presence: true
 end
