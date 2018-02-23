@@ -5,8 +5,8 @@
 version: 2
 jobs:
   build:
-    environment:
-      CC_TEST_REPORTER_ID: b328c64f661a42f2591f4c2659a57b303e1e475880ed2acbf560a754876b867d
+    # environment:
+    #   CC_TEST_REPORTER_ID: b328c64f661a42f2591f4c2659a57b303e1e475880ed2acbf560a754876b867d
     docker:
       # specify the version you desire here
        - image: circleci/ruby:2.4.1-node-browsers
@@ -43,11 +43,11 @@ jobs:
       - run: bundle exec rake db:schema:load
 
       # run tests!
-      - run:
-          name: Setup Code Climate test-reporter
-          command: |
-            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-            chmod +x ./cc-test-reporter
+      # - run:
+      #     name: Setup Code Climate test-reporter
+      #     command: |
+      #       curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+      #       chmod +x ./cc-test-reporter
       - run:
           name: run tests
           command: |
