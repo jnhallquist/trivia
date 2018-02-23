@@ -66,3 +66,4 @@ gem 'bcrypt', '3.1.11'
 
 # Testing tools
 gem 'rails-controller-testing'
+gem 'simplecov', require: false, group: :test
