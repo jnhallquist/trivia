@@ -60,3 +60,6 @@ gem 'bootstrap_form',
 
 # Use Font-Awesome-Rails
 gem 'font-awesome-rails'
+
+# Use bcrypt for password encryption
+gem 'bcrypt', '3.1.11'

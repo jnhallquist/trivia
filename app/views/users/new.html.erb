@@ -5,7 +5,7 @@
 ) do |form| %>
     <%= form.email_field :email %>
     <%= form.password_field :password %>
-    <%= form.password_field :confirmation %>
+    <%= form.password_field :password_confirmation %>
 
     <%= form.form_group :terms do %>
       <%= form.check_box :terms, label: "I agree to the Terms of Service" %>
