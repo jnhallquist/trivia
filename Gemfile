@@ -63,3 +63,6 @@ gem 'font-awesome-rails'
 
 # Use bcrypt for password encryption
 gem 'bcrypt', '3.1.11'
+
+# Testing tools
+gem 'rails-controller-testing'
