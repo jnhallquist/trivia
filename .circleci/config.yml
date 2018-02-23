@@ -3,6 +3,8 @@ jobs:
   build:
     parallelism: 3
     working_directory: ~/circleci-demo-ruby-rails
+    environment:
+      CC_TEST_REPORTER_ID: b328c64f661a42f2591f4c2659a57b303e1e475880ed2acbf560a754876b867d
     docker:
       - image: circleci/ruby:2.4-node
         environment:
@@ -68,6 +70,12 @@ jobs:
       - run:
           name: Database setup
           command: bundle exec rake db:schema:load
+
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
 
       - run:
           name: Run tests
