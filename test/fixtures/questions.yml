@@ -6,6 +6,7 @@ one:
   choice_b: MyString
   choice_c: MyString
   choice_d: MyString
+  correct_answer: MyString
 
 two:
   question: MyText
@@ -13,3 +14,4 @@ two:
   choice_b: MyString
   choice_c: MyString
   choice_d: MyString
+  correct_answer: MyString
