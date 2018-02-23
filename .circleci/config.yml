@@ -3,14 +3,9 @@ jobs:
   build:
     parallelism: 3
     working_directory: ~/circleci-demo-ruby-rails
-    environment:
-      CC_TEST_REPORTER_ID: b328c64f661a42f2591f4c2659a57b303e1e475880ed2acbf560a754876b867d
     docker:
       - image: circleci/ruby:2.4-node
         environment:
-          # BUNDLE_JOBS: 3
-          # BUNDLE_RETRY: 3
-          # BUNDLE_PATH: vendor/bundle
           PGHOST: 127.0.0.1
           PGUSER: psql
           RAILS_ENV: test
@@ -43,21 +38,9 @@ jobs:
           paths:
             - vendor/bundle
 
-      # Only necessary if app uses webpacker or yarn in some other way
-      # - restore_cache:
-      #     keys:
-      #       - rails-demo-yarn-{{ checksum "yarn.lock" }}
-      #       - rails-demo-yarn-
-
       - run:
           name: Yarn Install
           command: yarn install --cache-folder ~/.cache/yarn
-
-      # Store yarn / webpacker cache
-      # - save_cache:
-      #     key: rails-demo-yarn-{{ checksum "yarn.lock" }}
-      #     paths:
-      #       - ~/.cache/yarn
 
       - run:
           name: Wait for DB
@@ -70,26 +53,6 @@ jobs:
       - run:
           name: Database setup
           command: bundle exec rake db:schema:load
-
-      - run:
-          name: Setup dependencies
-          command: |
-            sudo composer self-update
-            composer install -n --prefer-dist
-
-      - run:
-          name: Setup Code Climate test-reporter
-          command: |
-            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-            chmod +x ./cc-test-reporter
-
-      - run:
-          name: Reporter
-          command: |
-            sudo docker-php-ext-enable xdebug
-            ./cc-test-reporter before-build
-            sudo vendor/bin/phpunit --coverage-clover clover.xml
-            ./cc-test-reporter after-build --coverage-input-type clover --exit-code $?
 
       - run:
           name: Run tests
