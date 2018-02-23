@@ -1,1 +1,16 @@
 <h4>Create Account</h4>
+
+<%= bootstrap_form_with(
+  model: @user, local: true, layout: :horizontal, control_col: "col-sm-8"
+) do |form| %>
+    <%= form.email_field :email %>
+    <%= form.text_field :username %>
+    <%= form.password_field :password %>
+    <%= form.password_field :confirmation %>
+
+    <%= form.form_group :terms do %>
+      <%= form.check_box :terms, label: "I agree to the Terms of Service" %>
+    <% end %>
+
+    <%= form.submit "Register", class: "btn btn-primary"%>
+<% end %>
