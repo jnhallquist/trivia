@@ -63,11 +63,11 @@ jobs:
 
       - run:
           name: Database setup
-          command: bin/rails db:schema:load --trace
+          command: bundle exec rake db:schema:load
 
       - run:
           name: Run tests
-          command: bin/rails test
+          command: test
 
       # Save test results for timing analysis
       - store_test_results:
