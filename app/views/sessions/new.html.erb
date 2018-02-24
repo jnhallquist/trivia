@@ -1,0 +1,11 @@
+<h4>Login</h4>
+
+<div class="col-md-3">
+  <%= bootstrap_form_for(:session, url: login_path) do |form| %>
+    <%= form.email_field :email %>
+    <%= form.password_field :password %>
+    <%= form.submit "Log In" %>
+
+    <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
+  <% end %>
+</div>
