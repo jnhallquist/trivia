@@ -2,5 +2,12 @@
   <a class="nav-link disabled" href="#">About</a>
   <a class="nav-link" href="/questions">Questions</a>
   <a class="nav-link" href="/users/new">Sign Up</a>
-  <a class="nav-link" href="/sessions/new">Login</a>
+  <% if logged_in? %>
+    <%= link_to "Users", '#', class: "nav-link" %>
+    <%= link_to "Profile", current_user, class: "nav-link" %>
+    <%= link_to "Settings", '#', class: "nav-link" %>
+    <%= link_to "Log out", logout_path, method: :delete, class: "nav-link" %>
+  <% else %>
+    <%= link_to "Log in", login_path, class: "nav-link" %>
+  <% end %>
 </nav>
