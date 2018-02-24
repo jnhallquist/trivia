@@ -1,4 +1,7 @@
 require 'simplecov'
+require 'coveralls'
+
+SimpleCov.formatter = Coveralls::SimpleCov::Formatter
 SimpleCov.start do
   class LineFilter < SimpleCov::Filter
     def matches?(source_file)
@@ -17,8 +20,7 @@ SimpleCov.start do
   add_group "Short files", LineFilter.new(5)
 end
 
-require 'coveralls'
-Coveralls.wear!
+Coveralls.wear('rails')!
 
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
