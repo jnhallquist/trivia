@@ -56,7 +56,7 @@ jobs:
 
       - run:
           name: Run tests
-          command: bundle exec rails test
+          command: bundle exec coveralls push
       #
       # # Save test results for timing analysis
       # - store_test_results:
