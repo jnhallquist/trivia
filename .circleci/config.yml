@@ -56,7 +56,7 @@ jobs:
 
       - run:
           name: Run tests
-          command: bundle exec rake :test_with_coveralls
+          command: bundle exec coveralls push
           environment:
             REPO_SECRET_TOKEN: ${REPO_TOKEN}
       #
