@@ -5,7 +5,7 @@ SimpleCov.start do
       source_file.lines.count < filter_argument
     end
   end
-  
+
   SimpleCov.minimum_coverage 90
 
   add_group "Models", "app/models"
@@ -26,4 +26,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def is_logged_in?
+    !session[:user_id].nil?
+  end
 end
