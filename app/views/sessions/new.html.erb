@@ -4,7 +4,8 @@
   <%= bootstrap_form_for(:session, url: login_path) do |form| %>
     <%= form.email_field :email %>
     <%= form.password_field :password %>
-    <%= form.submit "Log In" %>
+    <%= form.check_box :remember_me %>
+    <%= form.submit "Log In", class: "btn btn-primary" %>
 
     <p>New user? <%= link_to "Sign up now!", new_user_path %></p>
   <% end %>
