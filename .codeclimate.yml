@@ -34,7 +34,3 @@ exclude_paths:
 - LICENSE
 - Rakefile
 - README.md
-prepare:
-  fetch:
-  - url: "https://github.com/houndci/hound/blob/master/.rubocop.yml"
-    path: ".rubocop.yml"
