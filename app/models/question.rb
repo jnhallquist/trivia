@@ -1,4 +1,6 @@
 class Question < ApplicationRecord
+  before_save { correct_answer&.empty? }
+
   validates :question, presence: true
   validates :choice_a, presence: true
   validates :choice_b, presence: true
