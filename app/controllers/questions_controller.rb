@@ -16,9 +16,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    # render plain: params[:question].inspect
     @question = Question.new(question_params)
-
     if @question.save
       redirect_to @question
     else
@@ -28,17 +26,12 @@ class QuestionsController < ApplicationController
 
   def update
     @question = Question.find(params[:id])
-
-    if @question.update(question_params)
-      redirect_to @question
-    else
-      render 'edit'
-    end
+    @question.update(question_params)
+    redirect_to @question
   end
 
   def destroy
-    @question = Question.find(params[:id])
-    @question.destroy
+    Question.find(params[:id]).destroy
 
     redirect_to questions_path
   end
