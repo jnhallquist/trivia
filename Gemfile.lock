@@ -238,7 +238,6 @@ DEPENDENCIES
   rails-controller-testing
   sass-rails (~> 5.0)
   selenium-webdriver
-  simplecov
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
