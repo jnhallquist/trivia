@@ -36,5 +36,5 @@ exclude_paths:
 - README.md
 prepare:
   fetch:
-  - url: "https://github.com/houndci/hound/.rubocop.yml"
+  - url: "https://github.com/houndci/hound/blob/master/.rubocop.yml"
     path: ".rubocop.yml"
