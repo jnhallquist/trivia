@@ -56,9 +56,9 @@ jobs:
 
       - run:
           name: Run tests
-          command: bundle exec coveralls push
+          command: bundle exec rake :test_with_coveralls
           environment:
-            repo_secret_token: $(eval echo ${REPO_TOKEN}) 
+            REPO_SECRET_TOKEN: ${REPO_TOKEN}
       #
       # # Save test results for timing analysis
       # - store_test_results:
