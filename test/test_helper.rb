@@ -20,7 +20,7 @@ SimpleCov.start do
   add_group "Short files", LineFilter.new(5)
 end
 
-Coveralls.wear('rails')!
+Coveralls.wear!('rails')
 
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
