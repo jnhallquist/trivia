@@ -1,19 +1,7 @@
+<% provide(:button_text, 'Create Account') %>
+
 <h4>Sign up</h4>
 
 <div class="col-md-6 col-md-offset-3">
-  <%= bootstrap_form_with(
-    model: @user,
-    local: true,
-    layout: :horizontal
-  ) do |form| %>
-
-    <%= render 'shared/error_messages' %>
-
-    <%= form.email_field :email %>
-    <%= form.password_field :password %>
-    <%= form.password_field :password_confirmation %>
-
-    <%= form.submit "Create Account", class: "btn btn-primary"%>
-
-  <% end %>
+  <%= render 'form' %>
 </div>
