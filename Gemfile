@@ -66,4 +66,5 @@ gem 'bcrypt', '3.1.11'
 
 # Testing tools
 gem 'coveralls', require: false
+gem 'faker', '1.7.3'
 gem 'rails-controller-testing'
