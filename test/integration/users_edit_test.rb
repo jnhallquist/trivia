@@ -16,15 +16,15 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     assert_template 'users/edit'
   end
 
-  test 'successful edit' do
-    log_in_as(@user)
+  test 'successful edit with friendly forwarding' do
     get edit_user_path(@user)
-    assert_template 'users/edit'
+    log_in_as(@user)
+    assert_redirected_to edit_user_url(@user)
     email = 'foo@bar.com'
     patch user_path(@user), params: {
       user: { email: email,
-              password:              'testtest',
-              password_confirmation: 'testtest' }
+              password:              'foobared',
+              password_confirmation: 'foobared' }
     }
     assert_not flash.empty?
     assert_redirected_to @user
