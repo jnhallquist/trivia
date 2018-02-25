@@ -63,7 +63,6 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'authenticated? should return false for a user with nil digest' do
-    # remember token is blank because the error occurs before it ever gets used
-    assert_not @user.authenticated?('')
+    assert_not @user.authenticated?(:remember, '')
   end
 end
