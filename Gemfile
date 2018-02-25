@@ -66,4 +66,9 @@ gem 'bcrypt', '3.1.11'
 
 # Testing tools
 gem 'coveralls', require: false
+gem 'faker', '1.7.3'
 gem 'rails-controller-testing'
+
+# Pagination
+gem 'bootstrap-will_paginate', '1.0.0'
+gem 'will_paginate', '3.1.6'
