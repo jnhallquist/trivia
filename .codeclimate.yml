@@ -18,6 +18,10 @@ engines:
   rubocop:
     enabled: true
     checks:
+      Rubocop/Metrics/AbcSize:
+        enabled: false
+      Rubocop/Metrics/MethodLength:
+        enabled: false
       Rubocop/Style/Documentation:
         enabled: false
 ratings:
