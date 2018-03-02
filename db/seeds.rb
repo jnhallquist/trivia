@@ -21,3 +21,20 @@ User.create!(email: 'test@test.com',
                activated: true,
                activated_at: Time.zone.now)
 end
+
+Question.create!(question: 'The bobcat is native to which continent?',
+                 choice_a: 'Asia',
+                 choice_b: 'Europe',
+                 choice_c: 'North America',
+                 choice_d: 'Africa',
+                 correct_answer: 'c')
+
+99.times do |n|
+  question = "#{n + 1}-The bobcat is native to which continent?"
+  Question.create!(question: question,
+                   choice_a: 'Asia',
+                   choice_b: 'Europe',
+                   choice_c: 'North America',
+                   choice_d: 'Africa',
+                   correct_answer: 'c')
+end
